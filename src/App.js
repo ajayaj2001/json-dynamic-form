@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import JsonEditor from "./components/jsonEditor/JsonEditor";
+import FormBuilder from "./components/formBuilder/FormBuilder";
 
-function App() {
+const App = () => {
+  const [jsonOutput, setJsonOutput] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="row sm:flex">
+      <div className="col sm:w-1/2">
+        <JsonEditor setJsonOutput={setJsonOutput} />
+      </div>
+      <div className="col sm:w-1/2 pt-10 pr-8">
+        <FormBuilder jsonOutput={jsonOutput} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
