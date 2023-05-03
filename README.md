@@ -43,26 +43,19 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 This website used for creating an dynamic website based on json 
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+you can directly enter json in our editor or you can paste the json based on json response 
+the form will created
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+the json should be structed followed by below rules
 
-Use the `BLANK_README.md` to get started.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project.
 
 * [![React][React.js]][React-url]
 
@@ -73,12 +66,11 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+ you can direactly get the code and run it by following below instructions
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+you need stabel version of node in you machine
 * npm
   ```sh
   npm install npm@latest -g
@@ -86,12 +78,11 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Below is an instructions how you can get and run code in your machine
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/ajayaj2001/json-dynamic-form.git
    ```
 3. Install NPM packages
    ```sh
@@ -109,9 +100,73 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+After running the react app now you can play with it 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+The json that you have enter/paste must be in correct format below you will see the example code
+snippets
+
+   ```sh
+{
+  "title": "Json Form Builder",
+  "description": "generate dynamic form based on json response, play with it",
+  "properties": [
+    {
+      "id": "label-1",
+      "class": "label-1",
+      "for": "input-1",
+      "fieldType": "label",
+      "label": "First Name"
+    },
+    {
+      "id": "input-1",
+      "class": "input-1",
+      "name": "firstName",
+      "fieldType": "input",
+      "type": "text",
+      "placeholder": "First Name",
+      "hint": "your first name",
+      "validations": {
+        "regex": "^[a-zA-Z ]{2,30}$"
+      }
+    },
+    {
+      "id": "button-1",
+      "class": "button-1",
+      "fieldType": "button",
+      "type": "submit",
+      "title": "submit"
+    }
+  ]
+}
+   ```
+   
+   For each field properties depends upon field type properties are required
+
+For all the fields
+    • fieldType
+Label Attributes
+    • class / id
+    • for
+b. Input Attributes
+    • type
+    • class
+    • id
+    • name
+    • placeholder
+    • hint
+c. Button
+    • type
+    • class
+    • id
+
+for input some input types are not allowed
+here are the list  : radio,checkbox,file,image
+*if the user try to add the above input type it will treat this as text type input
+
+submit button should be have on 
+currently for future use we allow multiple button 
+if the button with type "submit" is clicked the form will validate and return the form value
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -121,7 +176,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 Ajay - [ajay.live](https://ajay.live) - ajayaj7397@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/ajayaj2001/json-dynamic-form](https://github.com/ajayaj2001/json-dynamic-form)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
