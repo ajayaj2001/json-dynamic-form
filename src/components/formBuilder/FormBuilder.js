@@ -1,54 +1,43 @@
 import React, { useState } from "react";
+import Element from "../element/Element";
 
 const FormBuilder = ({ jsonOutput }) => {
   const [formState, setFormState] = useState({});
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({ ...formState, [name]: value });
-  };
+  const [formSubmitResult, setFormSubmitResult] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Form submitted with state:", formState);
+    setFormSubmitResult(JSON.stringify(formState));
   };
 
   return (
-    <div>
-      <form
-        class="bg-white shadow rounded px-20 pt-6 pb-8 mb-4"
-        onSubmit={handleSubmit}
-      >
-        {jsonOutput?.map((input) => (
-          <div class="mb-6">
-            <label
-              id={input.id}
-              className={`${input.class} block text-gray-700 text-sm font-bold mb-2`}
-              for={input.for}
-            >
-              {input.label}
-            </label>
-            <input
-              name={input.name}
-              id={input.id}
-              className={`${input.class} shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
-              placeholder={input.placeholder}
-              required={input.required}
-              type="adsf"
-              value={formState[input.name] || ""}
-              onChange={handleChange}
-            />
-            <div class="flex items-center justify-between">
-              <button
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="button"
-              >
-                Sign In
-              </button>
-            </div>
+    <div className="w-full h-full bg-grey-lightest font-sans">
+      <div class="p-8 rounded border border-gray-200 h-4/6 sm:mt-24 lg:mt-0 overflow-y-auto">
+        <div className="heading mb-7">
+          <h1 class="font-medium text-3xl">{jsonOutput.title}</h1>
+          <p class="text-gray-600 mt-3 text-xs">{jsonOutput.description}</p>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-6">
+            {jsonOutput?.properties?.map((input, i) => (
+              <Element
+                formState={formState}
+                setFormState={setFormState}
+                input={input}
+                key={i}
+              />
+            ))}
           </div>
-        ))}
-      </form>
+        </form>
+      </div>
+      <div class="w-full h-48 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 mt-6">
+        <div class="flex items-center justify-between mb-4">
+          <h5 class="text-xl font-bold leading-none text-gray-900 ">
+            Form Submit Response
+          </h5>
+        </div>
+        <div class="flow-root">{formSubmitResult}</div>
+      </div>
     </div>
   );
 };

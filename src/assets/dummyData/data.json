@@ -1,0 +1,32 @@
+{
+  "title": "Json Form Builder",
+  "description": "generate dynamic form based on json response, play with it",
+  "properties": [
+    {
+      "id": "label-1",
+      "class": "label-1",
+      "for": "input-1",
+      "fieldType": "label",
+      "label": "First Name"
+    },
+    {
+      "id": "input-1",
+      "class": "input-1",
+      "name": "firstName",
+      "fieldType": "input",
+      "type": "text",
+      "placeholder": "First Name",
+      "hint": "your first name",
+      "validations": {
+        "regex": "^[a-zA-Z ]{2,30}$"
+      }
+    },
+    {
+      "id": "button-1",
+      "class": "button-1",
+      "fieldType": "button",
+      "type": "submit",
+      "title": "submit"
+    }
+  ]
+}
