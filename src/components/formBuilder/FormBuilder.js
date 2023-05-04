@@ -12,10 +12,10 @@ const FormBuilder = ({ jsonOutput }) => {
 
   return (
     <div className="w-full h-full bg-grey-lightest font-sans">
-      <div class="p-8 rounded border border-gray-200 h-4/6 sm:mt-24 lg:mt-0 overflow-y-auto">
+      <div className="p-8 rounded border border-gray-200 h-4/6 sm:mt-24 lg:mt-0 overflow-y-auto">
         <div className="heading mb-7">
-          <h1 class="font-medium text-3xl">{jsonOutput.title}</h1>
-          <p class="text-gray-600 mt-3 text-xs">{jsonOutput.description}</p>
+          <h1 className="font-medium text-3xl">{jsonOutput.title}</h1>
+          <p className="text-gray-600 mt-3 text-xs">{jsonOutput.description}</p>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="mb-6">
@@ -30,13 +30,13 @@ const FormBuilder = ({ jsonOutput }) => {
           </div>
         </form>
       </div>
-      <div class="w-full h-48 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 mt-6">
-        <div class="flex items-center justify-between mb-4">
-          <h5 class="text-xl font-bold leading-none text-gray-900 ">
+      <div className="w-full h-48 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 mt-6">
+        <div className="flex items-center justify-between mb-4">
+          <h5 className="text-xl font-bold leading-none text-gray-900 ">
             Form Submit Response
           </h5>
         </div>
-        <div class="flow-root">{formSubmitResult}</div>
+        <div className="flow-root">{formSubmitResult}</div>
       </div>
     </div>
   );

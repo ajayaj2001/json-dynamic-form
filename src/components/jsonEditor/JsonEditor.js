@@ -27,7 +27,7 @@ function JsonEditor({ setJsonOutput }) {
 
   return (
     <div className="w-full h-full bg-grey-lightest font-sans">
-      <div className="box border rounded flex flex-col shadow bg-white h-4/6 ">
+      <div className="box border rounded flex flex-col shadow bg-white h-4/6">
         <div className="box__title bg-grey-lighter px-3 py-2 border-b flex items-center justify-between">
           <h3 className="text-sm text-grey-darker font-medium">Json Editor</h3>
           <div>
@@ -54,13 +54,13 @@ function JsonEditor({ setJsonOutput }) {
         />
       </div>
 
-      <div class="w-full h-48 p-4 bg-white border border-gray-200 rounded-lg shadow mt-6 ">
-        <div class="flex items-center justify-between mb-4">
-          <h5 class="text-xl font-bold leading-none text-gray-900 ">
+      <div className="w-full h-48 p-4 bg-white border border-gray-200 rounded-lg shadow mt-6 ">
+        <div className="flex items-center justify-between mb-4">
+          <h5 className="text-xl font-bold leading-none text-gray-900 ">
             Json Error List
           </h5>
         </div>
-        <div class="flow-root">
+        <div className="flow-root">
           {validationErrors.length > 0 && (
             <div className="mt-2 text-red-500">
               {validationErrors.map((error) => (

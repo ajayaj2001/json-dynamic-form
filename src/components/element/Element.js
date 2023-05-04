@@ -36,12 +36,12 @@ const Element = ({ input, formState, setFormState }) => {
             pattern={input.validations?.regex}
           />
           {input.hint && (
-            <span class="block text-xs text-gray-600 ml-1">
+            <span className="block text-xs text-gray-600 ml-1">
               Hint : {input.hint}
             </span>
           )}
           {errorMessage.name === input.name && (
-            <span class="block text-sm text-red-700">
+            <span className="block text-sm text-red-700">
               {errorMessage.message}
             </span>
           )}

@@ -18,7 +18,10 @@
       "placeholder": "First Name",
       "hint": "your first name",
       "validations": {
-        "regex": "^[a-zA-Z ]{2,30}$"
+        "regex": "^[a-zA-Z ]{2,30}$",
+        "minLength": 3,
+        "maxLength": 10,
+        "required": true
       }
     },
     {
